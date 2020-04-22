@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express = require("express");
+const api_1 = require("./routes/api");
+const app = express();
+app.use(express.json());
+app.use("/api", api_1.default);
+const port = process.env.PORT || 5000;
+app.set("port", port);
+exports.default = app;
